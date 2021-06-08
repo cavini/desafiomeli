@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
-Run npm install on the frontend folder to install the React App and its dependencies, and after that run npm install on the root folder of the this repo to install the other dependencies.
+Run npm install on the frontend folder to install the React App and its dependencies, and after that run npm install on the root folder of this repo to install the other dependencies.
 
 After that, on the root folder, open up a terminal and run npm run dev.
 
