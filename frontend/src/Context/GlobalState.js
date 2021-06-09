@@ -73,12 +73,12 @@ const GlobalState = (props) => {
 
       createBreadCrumb(mostFrequentCategoryId);
 
-      const categoryNames = getCategoriesName(uniqueCategories);
+      const categoryNames = await getCategoriesName(uniqueCategories);
 
       const productList = new ProductList(shortArray, categoryNames);
       dispatch({ type: SET_PRODUCTS, payload: productList.items });
       dispatch({ type: SET_CATEGORIES, payload: categoryNames });
-
+      console.log(productList);
       return productList;
     }
   };
@@ -131,6 +131,7 @@ const GlobalState = (props) => {
     const response = await fetch(`/api/items/${query}`);
     if (response.ok) {
       const data = await response.json();
+
       await createBreadCrumb(data.category_id);
       await setProductDetail(data);
       return true;
@@ -139,6 +140,7 @@ const GlobalState = (props) => {
 
   const setProductDetail = async (product) => {
     const productDetail = new ProductDetails(product);
+    console.log(productDetail);
     dispatch({ type: SET_PRODUCT_DETAIL, payload: productDetail });
   };
 
